@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>웹프로그래밍--계산기 만들기--</title>
+    <script>
+        var first_val;
+        var operand;
+
+        function display_debug() {
+            var debug_out = document.getElementById("debug_area");
+            var debug_text = "<p>first_val:" + first_val + "</p>";
+            debug_text += "<p>operand:" + operand + "</p>";
+            debug_out.innerHTML = debug_text;
+        }
+
+        function button_click() {
+            var text = document.getElementById("text_display");
+            var num = this.textContent;
+            text.value = text.value + num;
+
+            display_debug();
+        }
+
+        function button_plus() {
+            var text = document.getElementById("text_display");
+            first_val = parseInt(text.value);
+            text.value = '';
+            operand = 'plus';
+
+            display_debug();
+        }
+
+        function button_sub() {
+            var text = document.getElementById("text_display");
+            first_val = parseInt(text.value);
+            text.value = '';
+            operand = 'sub';
+
+            display_debug();
+        }
+
+        function button_mul() {
+            var text = document.getElementById("text_display");
+            first_val = parseInt(text.value);
+            text.value = '';
+            operand = 'mul';
+
+            display_debug();
+        }
+
+        function button_div() {
+            var text = document.getElementById("text_display");
+            first_val = parseInt(text.value);
+            text.value = '';
+            operand = 'div';
+
+            display_debug();
+        }
+
+        function button_equal() {
+            var text = document.getElementById("text_display");
+            var second_val = parseInt(text.value);
+            if (operand == 'plus') {
+                text.value = '' + (first_val + second_val);
+            }
+            else if(operand == 'sub') {
+                text.value = '' + (first_val - second_val);
+            }
+            else if(operand == 'mul') {
+                text.value = '' + (first_val * second_val);
+            }
+            else if(operand == 'div') {
+                text.value = '' + (first_val / second_val);
+            }
+            operand = '';
+
+            display_debug();
+        }
+
+        function button_clear() {
+            var text = document.getElementById("text_display");
+            text.value = '';
+            operand = '';
+
+            display_debug();
+        }
+
+        window.onload = function (e) {
+            var buttons = document.getElementsByClassName("num_btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = button_click;
+            }
+            document.getElementById("btn_plus").onclick = button_plus;
+            document.getElementById("btn_sub").onclick = button_sub;
+            document.getElementById("btn_mul").onclick = button_mul;
+            document.getElementById("btn_div").onclick = button_div;
+            document.getElementById("btn_equal").onclick = button_equal;
+            document.getElementById("btn_clear").onclick = button_clear;
+        }
+    </script>
+    <style>
+    * { margin:0; padding: 0;}
+        #back-rounge{
+            text-align: center;
+            margin: 0 auto;
+            width: 960px;
+            width: 200px;
+            margin: 0px; padding: 0px;
+            border: 3px solid blue;
+            border-radius: 0px;
+            box-shadow: 0px 0px 22px 0px blue;
+        }
+    </style>
+</head>
+<body>
+<div id="back-rounge">
+<h1>계산기</h1>
+<input type="text" id="text_display"/><br/>
+<button class="num_btn">1</button>
+<button class="num_btn">2</button>
+<button class="num_btn">3</button>
+<button id="btn_clear">C</button><br/>
+<button class="num_btn">4</button>
+<button class="num_btn">5</button>
+<button class="num_btn">6</button>
+<button id="btn_plus">+</button><br/>
+<button class="num_btn">7</button>
+<button class="num_btn">8</button>
+<button class="num_btn">9</button>
+<button id="btn_sub">-</button><br/>
+<button id="btn_mul">x</button>
+<button class="num_btn">0</button>
+<button id="btn_div">/</button>
+<button id="btn_equal">=</button><br/>
+</div>
+<div id="debug_area">
+</div>
+</body>
+</html>
