@@ -11,6 +11,8 @@
             var debug_out = document.getElementById("debug_area");
             var debug_text = "<p>first_val:" + first_val + "</p>";
             debug_text += "<p>operand:" + operand + "</p>";
+            debug_out.style.background="blue";
+            debug_out.style.color="white";
             debug_out.innerHTML = debug_text;
         }
 
@@ -101,7 +103,7 @@
     </script>
     <style>
     * { margin:0; padding: 0;}
-        #back-rounge{
+        #calc-CSS{
             text-align: center;
             margin: 0 auto;
             width: 960px;
@@ -114,7 +116,7 @@
     </style>
 </head>
 <body>
-<div id="back-rounge">
+<div id="calc-CSS">
 <h1>계산기</h1>
 <input type="text" id="text_display"/><br/>
 <button class="num_btn">1</button>
