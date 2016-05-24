@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <title>
+    myprofile.html
+  </title>
+  <style>
+
+  .floating-box {
+          display: inline-block;
+          height: 60px;
+          width: 300px;
+          margin: 10px;
+          float: left;
+          overflow: scroll;
+  }
+  h3{
+      color: white;
+      background: orange;
+      border-radius: 20px;
+    }
+  #content{overflow: hidden;}
+  #main-aside{
+    float:right;
+    width: 200px;
+  }
+  .aside-list{padding: 10px 0 30px 0;}
+  .aside-list > h3 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .aside-list li a {
+    margin-left: 8px;
+    font-size: 13px
+    color: orange;
+  }
+  </style>
+</head>
+</br>
+<body>
+  <div class="container">
+  <div id="content">
+    <aside id="main-aside"></aside>
+  </div>
+  <h1>
+    Myprofile
+  </h1>
+  <div class="box">
+  <h3>&nbsp&nbsp인적사항</h3>
+  </div>
+  </br>
+  <div class="img1">
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="myphoto.jpg" alt="myphoto" width="150" height="200"/>
+  </div>
+  <ul>
+    <li>이름 : 안재성</li>
+    <li>생년월일 : 1992년 6월 8일</li>
+    <li>주소 : 서울특별시 관악구 신림동</li>
+    <li>연락처 : 010-5593-5009</li>
+    <li>이메일 : kingdom0608@gmail.com</li>
+  </ul>
+  <br/>
+  <h3>&nbsp&nbsp활동사항</h3>
+  <ul>
+    <li>성보고등학교 졸업 (2008.03.03~2011.02.10)</li>
+    <li>한성대학교 입학 (2012.03.03~)</li>
+    <li>대한민국 해병대 병장 만기전역 (2012.08.20~2014.05.19)</li>
+    <li><a href="http://www.hsvision.net" target=_"blank" style="text-decoration:none">한성대학교 벤처창업연구회 VISION</a> 회장 (2015.09.01~)</li>
+    <li><a href="http://www.hanbooks.net" target=_"blank" style="text-decoration:none">한성대학교 중고책 거래 서비스 HANBOOKS</a> 대표 & 개발자</li>
+  </ul>
+  <br/>
+  <h3>&nbsp&nbsp학적사항</h3>
+    <ul>
+      <li>학교 : <a href="http://www.hansung.ac.kr" target=_"blank" style="text-decoration:none">한성대학교</a></li>
+      <li>전공 : 산업경영공학 & IT응용시스템공학</li>
+      <li>학번 : 1295089</li>
+      <li>학년 : 3학년</li>
+    </ul>
+  <br/>
+  <fieldset style="width=300" "heigh=300">
+    <legend>종합정보시스템</legend>
+  <div class="floating-box">
+      <form action="">
+        <p>
+        <label for="학번_txt">학번</label> :
+        <input id=아이디_txt=type="text" name="id" value="학번을 입력하세요.">
+        </p>
+        <p>
+        <label>비밀번호</label> :
+        <input type="password" name="pwd">
+        </p>
+        <input type="submit" value="로그인">
+        <input type="submit" value="학번/비밀번호 찾기">
+  </fieldset>
+  <br/>
+  <h3>&nbsp&nbsp자격사항</h3>
+    <ul>
+    <li>운전면허 1종 보통</li>
+    <li>수상동력면허 2종 보통</li>
+    <li>한국사능력검정 1급</li>
+    </ul>
+  <br/>
+  <h3>&nbsp&nbsp수상경력</h3>
+    <ul>
+      <li>campus-reboot 창업경진대회 동상 수상</li>
+    </ul>
+  <br/>
+  <aside id="main-aside">
+    <div class="aside-list">
+      <ul>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-music"></span> Music
+        </button>
+      </ul>
+    </div>
+  </aside>
+  </div>
+</body>
+<footer>
+</footer>
+</html>
