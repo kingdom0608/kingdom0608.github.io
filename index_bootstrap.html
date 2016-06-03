@@ -40,21 +40,25 @@
     color: orange;
   }
   </style>
+  <style>
+        .col-md-15{background-color:lightyellow;}
+  </style>
 </head>
 </br>
 
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="">Myprofile</a>
+      <a class="navbar-brand" href="http://localhost:8080/myprofile_bootstrap.html">Myprofile</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="">Home</a></li>
-      <li><a href="">Page 1</a></li>
-      <li><a href="">Page 2</a></li>
-      <li><a href="">Page 3</a></li>
-      <li><a href="">Page 4</a></li>
+      <li class="active"><a href="#Home">Home</a></li>
+      <li><a href="#인적사항">인적사항</a></li>
+      <li><a href="#활동사항">활동사항</a></li>
+      <li><a href="#학적사항">학적사항</a></li>
+      <li><a href="#자격사항">자격사항</a></li>
+      <li><a href="#수상경력">수상경력</a></li>
     </ul>
   </div>
 </nav>
@@ -64,11 +68,13 @@
     <aside id="main-aside"></aside>
   </div>
   <div id = "Home">
+  <br>
   <h1>
     Myprofile
   </h1>
   </div>
   <div class="box">
+  <div id = "인적사항">
   <h3>&nbsp&nbsp인적사항</h3>
   </div>
   </br>
@@ -82,7 +88,9 @@
     <li>연락처 : 010-5593-5009</li>
     <li>이메일 : kingdom0608@gmail.com</li>
   </ul>
+  </div>
   <br/>
+  <div id = "활동사항">
   <h3>&nbsp&nbsp활동사항</h3>
   <ul>
     <li>성보고등학교 졸업 (2008.03.03~2011.02.10)</li>
@@ -91,7 +99,9 @@
     <li><a href="http://www.hsvision.net" target=_"blank" style="text-decoration:none">한성대학교 벤처창업연구회 VISION</a> 회장 (2015.09.01~)</li>
     <li><a href="http://www.hanbooks.net" target=_"blank" style="text-decoration:none">한성대학교 중고책 거래 서비스 HANBOOKS</a> 대표 & 개발자</li>
   </ul>
+</div>
   <br/>
+  <div id = "학적사항">
   <h3>&nbsp&nbsp학적사항</h3>
     <ul>
       <li>학교 : <a href="http://www.hansung.ac.kr" target=_"blank" style="text-decoration:none">한성대학교</a></li>
@@ -115,7 +125,9 @@
         <input type="submit" value="로그인">
         <input type="submit" value="학번/비밀번호 찾기">
   </fieldset>
+  </div>
   <br/>
+  <div id = "자격사항">
   <h3>&nbsp&nbsp자격사항</h3>
     <ul>
     <li>운전면허 1종 보통</li>
@@ -123,11 +135,31 @@
     <li>한국사능력검정 1급</li>
     </ul>
   <br/>
+  </div>
+  <div id = "수상경력">
   <h3>&nbsp&nbsp수상경력</h3>
     <ul>
       <li>campus-reboot 창업경진대회 동상 수상</li>
     </ul>
+  </div>
   <br/>
+  <div class="col-md-15">
+            <legend><b>댓글달기</b></legend>
+            <textarea cols="80" rows="5"></textarea>
+            <br />
+            <input id="good" type="radio" name="mind" value="g" class="choice" />
+            <label for="good"><span class="glyphicon glyphicon-thumbs-up"></span></label>
+            <input id="bad" type="radio" name="mind" value="b" class="choice"/>
+            <label for="bad"><span class="glyphicon glyphicon-thumbs-down"></span></label>
+  <br/>
+            <input type="reset" name="취소" />
+            <input type="submit" name="제출" />
+          </form>
+          </div>
+          <br/>
+          <br/>
+</body>
+<footer>
   <aside id="main-aside">
     <div class="aside-list">
       <ul>
@@ -136,31 +168,6 @@
         </button>
       </ul>
     </div>
-  </aside>
-  </div>
-  <div class="container">
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">이메일 보내기</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">안녕하세요.</h4>
-        </div>
-        <div class="modal-body">
-          <p>This is a large modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-<footer>
 </footer>
 </html>
+
