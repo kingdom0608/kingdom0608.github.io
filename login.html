@@ -3,13 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title> Login Page </title>
-</head>
-<body>
+
     <?php
     session_start();
-    
     $con = mysqli_connect('localhost','root','hansung','guest');
-    
     if (isset($_POST['submit'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -30,10 +27,10 @@
         } else {
             echo "Wrong username or password !";
         }
-    
     }
     ?>
-    
+</head>
+<body>
     <center>
         <form method="post" action="login.html">
         <table border="2" >
