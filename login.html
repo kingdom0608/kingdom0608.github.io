@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title> Login Page </title>
-
-    <?php
+<?php
     session_start();
     $con = mysqli_connect('localhost','root','hansung','guest');
     if (isset($_POST['submit'])) {
@@ -28,7 +22,13 @@
             echo "Wrong username or password !";
         }
     }
-    ?>
+?>
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Login Page </title>
 </head>
 <body>
     <center>
