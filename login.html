@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title> Login Page </title>
-
+</head>
+<body>
     <?php
     session_start();
     $con = mysqli_connect('localhost','root','hansung','guest');
@@ -29,8 +30,7 @@
         }
     }
     ?>
-</head>
-<body>
+
     <center>
         <form method="post" action="login.html">
         <table border="2" >
