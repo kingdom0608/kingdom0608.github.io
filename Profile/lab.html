@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AHNJAESUNG BlOG</title>
+    <style>
+      .floating-box {
+            display: inline-block;
+            height: 60px;
+            width: 300px;
+            margin: 10px;
+            float: left;
+            overflow: scroll;
+      }
+    </style>
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0; padding: 0;
+            font-family: '맑은 고딕', 'Malgun Gothic', Gothic, sans-serif;
+        }
+        a { text-decoration: none; }
+        li { list-style: none; }
+    </style>
+    <!-- 기본 클래스 -->
+    <style>
+        .pull-left { float: left; }
+        .pull-right { float:right; }
+    </style>
+    <!-- 페이지 -->
+    <style>
+        body {
+            width: 960px; margin: 0 auto;
+            background: #E6E6E6;
+        }
+        #page-wrapper {
+            background: white;
+            margin: 40px 0; padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header { padding: 40px 50px; }
+        .master-title {
+            font-size: 30px;
+            color: #181818;
+        }
+        .master-description {
+            font-size: 15px; font-weight: 500;
+            color: #383838;
+        }
+    </style>
+    <!-- 네비게이션 -->
+    <style>
+        #main-navigation {
+            border-top: 1px solid #C8C8C8;
+            border-bottom: 1px solid #C8C8C8;
+            margin-bottom: 20px;
+            height: 40px;
+        }
+        .outer-menu-item {
+            float: left;
+            position: relative;
+        }
+        .outer-menu-item:hover {
+            background: white;
+            color: white
+        }
+        .menu-title {
+            display: block;
+            height: 30px; line-height: 30px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 40px; left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+            text-align: center
+        }
+        .inner-menu-item > a {
+            display: block;
+            padding: 5px 10px;
+            color: black;
+        }
+        .inner-menu-item > a:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+    <!-- 네비게이션 내부의 검색 -->
+    <style>
+        .search-bar {
+            height: 26px;
+            padding: 7px;
+        }
+        .input-search {
+            display: block;
+            float: left;
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            width: 120px; height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #555555;
+        }
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .input-search-submit {
+            display: block;
+            float: left;
+            width: 50px; height: 26px;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid #CCCCCC;
+            margin-left: -1px;
+            vertical-align: top;
+            display: inline-block;
+        }
+    </style>
+    <!-- 중앙 내용 -->
+    <style>
+        /* body 태그의 너비: 960픽셀 */
+        /* #page-wrapper 태그의 padding 속성으로 내용물 너비는 920픽셀 */
+        #content { overflow: hidden; }
+        #main-section {
+            float: left;
+            width: 710px;
+        }
+        #main-aside {
+            float: right;
+            width: 200px;
+        }
+    </style>
+    <!-- 좌측 내용물 -->
+    <style>
+        article {
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #C8C8C8;
+        }
+        .article-header { padding: 20px 0; }
+        .article-title {
+            font-size: 25px;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        .article-date { font-size: 13px; }
+        .article-body {
+            font-size: 14px;
+        }
+    </style>
+    <!-- 우측 구성 -->
+    <style>
+        .aside-list { padding: 10px 0 30px 0; }
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6C6C6C;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function () {
+                $(this).find('.inner-menu').show();
+            }, function () {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <hgroup>
+                <h1 class="master-title">AHNJAESUNG BLOG</h1>
+                <h2 class="master-description">안재성 블로그에 오신 것을 환영합니다.</h2>
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title"><a href="index.html">Personal information</a></span>
+                        <ul class="inner-menu">
+                        </ul>
+                    </li>
+
+                    <li class="outer-menu-item">
+                        <span class="menu-title"><a href="index.html">Education information</a></span>
+                        <ul class="inner-menu">
+                        </ul>
+                    </li>
+
+                    <li class="outer-menu-item">
+                        <span class="menu-title"><a href="index.html">Activities</a></span>
+                        <ul class="inner-menu">
+                            <!-- <li class="inner-menu-item"><a href="#">데이터</a></li> -->
+                        </ul>
+                    </li>
+
+                    <li class="outer-menu-item">
+                        <span class="menu-title"><a href="lab.html">Lab</a></span>
+                        <ul class="inner-menu">
+                            <!-- <li class="inner-menu-item"><a href="#">데이터</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <div class="search-bar">
+                    <form>
+                        <input type="text" class="input-search" />
+                        <input type="submit" class="input-search-submit" value="검색" />
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                  <div id="personal information">
+                    <div class="article-header">
+                        <h1 class="article-title">IoT야외체육기구</h1>
+                        <!-- <p class="article-date">2016년 06월 17일</p> -->
+                    </div>
+                  </div>
+                    <div class="article-body">
+                        <img src="IoTOutdoorEE01.jpg" alt="IoTOutdoorEE01" width="335" height="200"/>
+                        &nbsp;
+                        <img src="IoTOutdoorEE02.jpg" alt="IoTOutdoorEE02" width="335" height="200"/>
+                        <br />
+                        <br />
+                        <h3>시스템 구성</h3>
+                        IT 융합형 스마트 야외체육기구는 태양광 에너지로 동작하며, 사용자 운동량을 측정하여 제공하고 이동통신망을
+                        통해 서버에 저장한 후 사용자의 스마트폰으로 자신의 운동 이력 정보를 조회할 수 있다. 운동량에 따른 포인트를
+                        적립하여 공공건강관리 등에 활용할 수 있는 헬스캐쉬백서비스를 제공한다.
+                        또한, 미세먼지수준 및 날씨정보를 제공하며, 위급상황버튼을 제공한다.
+                        <br />
+                        <br />
+                        <h3>시스템 구현</h3>
+                        IT 융합형 스마트 야외체육기구 개발 환경은 라즈베리파이3, 10인치 LCD 모니터와 각종 센서(조도센서, 적외선거리측정센서, 운동횟수 측정센서 등)로 구성되며,
+                        운영체제는 라즈비안을 사용 중이며, 개발언어는 파이썬을 활용하고 있다.
+                        시제품은 다양한 야외체육기구 중 달리기, 몸통돌리기, 구름걷기에 적용하고 있다. 그림 3은 개발 중인스마트 야외체육기구 10인치 모니터에 출력되는 화면의예이다.
+                        운동횟수, 운동거리, 운동시간, 소모칼로리, 헬스캐쉬백 포인트, 날짜및시간, 날씨/온도 정보와 함께 사용자의 상반신에 대한 열화상을 제공한다.
+                        또한, 사용자가 운동을 시작하거나 끝내는 시점, 미세머지 수준에 따라 적절한 음성 안내 메시지를 출력한다.
+                        <br />
+                        <br />
+                        <a href="IoTOutdoorEE.pdf" target="_blank">IoT야외체육기구 논문 보기</a>
+                    </div<
+                  </div>
+                </article>
+                <article>
+                  <div id="personal information">
+                    <div class="article-header">
+                        <h1 class="article-title">립모션을 수화통역기</h1>
+                        <!-- <p class="article-date">2016년 06월 17일</p> -->
+                    </div>
+                  </div>
+                    <div class="article-body">
+                        <img src="LeapMotion01.jpg" alt="LeapMotion01" width="335" height="200"/>
+                        &nbsp;
+                        <img src="LeapMotion02.jpg" alt="LeapMotion02" width="335" height="200"/>
+                        <br />
+                        <br />
+                        <h3>시스템 구성</h3>
+                        립모션 수화통역기는 립모션 컨트롤러를 사용하며, 사용자의 손동작을 인식해서 데이터를 추출한다.
+                        추출된 데이터를 가지고 어떤 수화인지 예측하여 GUI에 텍스트 형식으로 출력한다.
+                        수화는 정적인 지화와 동적인 수화로 나뉘어져 있으며 두 가지를 구분하여 출력한다.
+                        <br />
+                        <br />
+                        <h3>시스템 구현</h3>
+                        지화/수화를 인식 및 통역 프로그램인 HandsTalk은 PC 기반하에서 립모션을 활용하여 JAVA로 개발되었고, PC 및 태블릿 해상도에 맞춰 GUI를 구성하였다.
+                        수화통역기는 인식되는 손의 모양을 확인할 수 있는 프레임과 수화가 인식되면 한글로 변환하여 출력해주는 프레임,
+                        그리고 유사도가 높은 단어들을 제시해주는 프레임으로 구성된다. 이 프로그램에는 자음, 모음을 조합해주는 한글 오타마타 기능, 수화 문장 출력 기능,
+                        추천단어 선택 기능, 제스쳐 기능, 손 모양 시각화 기능이 포함되어 있다.
+                        <br />
+                        <br />
+                        <a href="LeapMotion.pdf" target="_blank">립모션 수화통역기 논문 보기</a>
+                    </div<
+                  </div>
+                </article>
+            </section>
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer id="main-footer">
+            <br />
+            <a href="#">Created By AHNJAESUNG</a>
+        </footer>
+    </div>
+</body>
+</html>
